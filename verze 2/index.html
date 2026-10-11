@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbora Karásková | Nutriční koučink a fitness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4a5568; /* Břidlicová */
+            --accent: #a39485;  /* Béžová */
+            --bg: #f8f9fa;
+            --white: #ffffff;
+            --text: #2d3748;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Open Sans', sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Navigace */
+        nav { background: var(--white); padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 1000; }
+        .nav-flex { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav a { text-decoration: none; color: var(--text); font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+        nav a:hover { color: var(--accent); }
+
+        /* Hero sekce */
+        .hero { padding: 80px 0; display: flex; align-items: center; gap: 50px; }
+        .hero-content { flex: 1; }
+        .hero-content h1 { font-size: 3rem; color: var(--primary); line-height: 1.2; margin-bottom: 20px; }
+        .hero-img { flex: 1; text-align: right; }
+        .hero-img img { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 20px 20px 0 var(--accent); }
+
+        /* Služby */
+        .services { padding: 80px 0; background: var(--white); }
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .card { padding: 40px; border: 1px solid #eee; border-radius: 10px; transition: 0.3s; text-align: center; }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); border-color: var(--accent); }
+        .card h3 { margin-bottom: 15px; color: var(--primary); }
+        .btn { display: inline-block; padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 5px; margin-top: 20px; transition: 0.3s; }
+        .btn:hover { background: var(--accent); }
+
+        /* Kontakt */
+        .contact { padding: 80px 0; }
+        .contact-flex { display: flex; gap: 50px; }
+        .contact-info { flex: 1; }
+        .contact-form { flex: 1; background: var(--white); padding: 30px; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        input, textarea { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 5px; font-family: inherit; }
+        
+        footer { padding: 40px 0; text-align: center; background: var(--primary); color: white; font-size: 0.8rem; }
+        
+        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } .hero-img { text-align: center; } .contact-flex { flex-direction: column; } }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-flex">
+            <div class="logo">Barbora Karásková</div>
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="nutricni-koucink.html">Výživa</a></li>
+                <li><a href="osobni-trenink.html">Trénink</a></li>
+                <li><a href="online-spoluprace.html">Online</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="container hero">
+        <div class="hero-content">
+            <h1>Cesta k udržitelnému zdraví a formě</h1>
+            <p>Jsem Barbora, vaše průvodkyně světem moderní výživy a pohybu. Pomáhám lidem dosáhnout jejich cílů bez drastických diet, s důrazem na dlouhodobé zdraví a radost ze života.</p>
+            <a href="#sluzby" class="btn">Moje služby</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800" alt="Barbora Karásková">
+        </div>
+    </section>
+
+    <section class="services" id="sluzby">
+        <div class="container">
+            <div class="section-title">
+                <h2>Jak vám mohu pomoci?</h2>
+                <p>Vyberte si oblast, která vás zajímá nejvíce</p>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3>Nutriční koučink</h3>
+                    <p>Diagnostika těla a nastavení stravovací strategie, která vás nebude omezovat.</p>
+                    <a href="nutricni-koucink.html" class="btn">Více o výživě</a>
+                </div>
+                <div class="card">
+                    <h3>Osobní trénink</h3>
+                    <p>Individuální lekce ve špičkovém fitku Body Care se zaměřením na SM systém a TRX.</p>
+                    <a href="osobni-trenink.html" class="btn">Chci trénovat</a>
+                </div>
+                <div class="card">
+                    <h3>Online spolupráce</h3>
+                    <p>Kompletní vedení na dálku pro ty, kteří chtějí mít výsledky z pohodlí domova.</p>
+                    <a href="online-spoluprace.html" class="btn">Chci online koučink</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container contact" id="kontakt">
+        <div class="contact-flex">
+            <div class="contact-info">
+                <h2>Pojďme se spojit</h2>
+                <p>Máte dotaz k ebooku nebo chcete začít spolupráci? Napište mi přímo zde nebo na můj email.</p>
+                <p style="margin-top: 20px;"><strong>Email:</strong> karaskovabarbora@seznam.cz</p>
+                <p><strong>Lokalita:</strong> Praha - Pekárenský dvůr</p>
+            </div>
+            <form class="contact-form" action="https://formspree.io/f/karaskovabarbora@seznam.cz" method="POST">
+                <input type="text" name="name" placeholder="Vaše jméno" required>
+                <input type="email" name="email" placeholder="Váš email" required>
+                <textarea name="message" rows="5" placeholder="S čím vám mohu pomoci?" required></textarea>
+                <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Odeslat zprávu</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Barbora Karásková | Všechna práva vyhrazena</p>
+        </div>
+    </footer>
+</body>
+</html>

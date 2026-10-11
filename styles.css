@@ -1,0 +1,487 @@
+/* ==========================================================================
+   Barbora Karásková — sdílené styly
+   Jedna paleta a jeden font pro všechny stránky webu, aby se nikdy nerozjely.
+   ========================================================================== */
+
+:root {
+  --primary: #4a5568; /* Břidlicová */
+  --accent: #a39485;  /* Béžová */
+  --accent-dark: #8a7a6a; /* tmavší béžová pro hover/kontrast textu na accentu */
+  --bg: #f8f9fa;
+  --white: #ffffff;
+  --text: #2d3748;
+  --border: #eee;
+
+  --font-body: 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --radius: 10px;
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Užší kontejner pro textové podstránky */
+.container--narrow {
+  max-width: 900px;
+}
+
+/* ------------------------------- Navigace ------------------------------- */
+nav {
+  background: var(--white);
+  padding: 20px 0;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo,
+.logo:link,
+.logo:visited {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+nav a:hover,
+nav a[aria-current="page"] {
+  color: var(--accent-dark);
+}
+
+.nav-toggle {
+  display: none;
+}
+
+/* --------------------------------- Hero --------------------------------- */
+.hero {
+  padding: 80px 0;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: var(--primary);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  margin-bottom: 10px;
+}
+
+.hero-img {
+  flex: 1;
+  text-align: right;
+}
+
+.hero-img img {
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  border-radius: 15px;
+  box-shadow: 20px 20px 0 var(--accent);
+}
+
+/* -------------------------------- Služby -------------------------------- */
+.services {
+  padding: 80px 0;
+  background: var(--white);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title h2 {
+  color: var(--primary);
+}
+
+.section-title p {
+  margin-top: 10px;
+  color: var(--text);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  padding: 40px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--primary);
+  color: var(--white);
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: var(--accent-dark);
+}
+
+.btn--block {
+  width: 100%;
+}
+
+/* ------------------------------- Ebook sekce ----------------------------- */
+.ebook {
+  padding: 80px 0;
+}
+
+.ebook-flex {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.ebook-img {
+  flex: 0 0 260px;
+}
+
+.ebook-img img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+}
+
+.ebook-content {
+  flex: 1;
+}
+
+.ebook-content h2 {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.ebook-content p {
+  margin-bottom: 15px;
+}
+
+/* ------------------------------- Kontakt --------------------------------- */
+.contact {
+  padding: 80px 0;
+}
+
+.contact-flex {
+  display: flex;
+  gap: 50px;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h2 {
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.contact-form {
+  flex: 1;
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 6px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+input:focus,
+textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-top: -5px;
+  margin-bottom: 15px;
+}
+
+/* -------------------------- Obsahové podstránky -------------------------- */
+main {
+  display: block;
+}
+
+.content-page {
+  padding: 80px 0;
+}
+
+.content-page h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 30px;
+}
+
+.thematic-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  margin-bottom: 40px;
+  box-shadow: var(--shadow-md);
+}
+
+.info-section {
+  margin-bottom: 40px;
+}
+
+.info-section h2 {
+  margin-bottom: 15px;
+  color: var(--primary);
+  border-bottom: 2px solid var(--accent);
+  display: inline-block;
+  font-size: 1.4rem;
+}
+
+.price-box {
+  background: var(--accent);
+  color: var(--white);
+  padding: 30px;
+  border-radius: var(--radius);
+  margin-top: 40px;
+  text-align: center;
+}
+
+.price-box .btn {
+  background: var(--primary);
+}
+
+.price-box .btn:hover {
+  background: #3a4353;
+}
+
+.price-tag {
+  font-size: 2.5rem;
+  font-weight: 700;
+  display: block;
+}
+
+.highlight-box {
+  border: 2px solid var(--accent);
+  padding: 30px;
+  border-radius: var(--radius);
+  margin-bottom: 30px;
+}
+
+.highlight-box h2,
+.plan-card-white h3 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.highlight-box p + p {
+  margin-top: 10px;
+}
+
+.plan-card-white {
+  text-align: center;
+  background: var(--white);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-md);
+}
+
+.plans-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.plan {
+  background: var(--white);
+  padding: 30px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.plan h3 {
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.plan-price {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  margin-bottom: 15px;
+  display: block;
+}
+
+/* -------------------------------- Patička -------------------------------- */
+footer {
+  padding: 40px 0;
+  text-align: center;
+  background: var(--primary);
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+footer a {
+  color: var(--white);
+  text-decoration: underline;
+}
+
+footer p + p {
+  margin-top: 8px;
+  opacity: 0.85;
+  font-size: 0.8rem;
+}
+
+/* ------------------------------ Responzivita ------------------------------ */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    padding: 50px 0;
+  }
+
+  .hero-img {
+    text-align: center;
+  }
+
+  .hero-img img {
+    margin: 0 auto;
+    box-shadow: 10px 10px 0 var(--accent);
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .ebook-flex {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ebook-img {
+    flex: 0 0 auto;
+    width: 200px;
+  }
+
+  .contact-flex {
+    flex-direction: column;
+  }
+
+  .nav-flex {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .content-page h1 {
+    font-size: 1.9rem;
+  }
+
+  .plans-grid {
+    grid-template-columns: 1fr;
+  }
+}

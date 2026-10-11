@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbora Karásková | Nutriční koučink a fitness</title>
+    <meta name="description" content="Nutriční koučink, osobní trénink a online spolupráce s Barborou Karáskovou. Cesta k udržitelnému zdraví a formě bez drastických diet.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%234a5568'/%3E%3Ctext x='50' y='68' font-size='58' text-anchor='middle' fill='%23a39485' font-family='sans-serif'%3EB%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">Barbora Karásková</a>
+            <ul>
+                <li><a href="index.html" aria-current="page">Domů</a></li>
+                <li><a href="nutricni-koucink.html">Výživa</a></li>
+                <li><a href="osobni-trenink.html">Trénink</a></li>
+                <li><a href="online-spoluprace.html">Online</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container hero">
+            <div class="hero-content">
+                <h1>Cesta k udržitelnému zdraví a formě</h1>
+                <p>Jsem Barbora, vaše průvodkyně světem moderní výživy a pohybu. Pomáhám lidem dosáhnout jejich cílů bez drastických diet, s důrazem na dlouhodobé zdraví a radost ze života.</p>
+                <a href="#sluzby" class="btn">Moje služby</a>
+            </div>
+            <div class="hero-img">
+                <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&amp;fit=crop&amp;q=80&amp;w=800" width="800" height="1000" alt="Barbora Karásková">
+            </div>
+        </section>
+
+        <section class="services" id="sluzby">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Jak vám mohu pomoci?</h2>
+                    <p>Vyberte si oblast, která vás zajímá nejvíce</p>
+                </div>
+                <div class="grid">
+                    <div class="card">
+                        <h3>Nutriční koučink</h3>
+                        <p>Diagnostika těla a nastavení stravovací strategie, která vás nebude omezovat.</p>
+                        <a href="nutricni-koucink.html" class="btn">Více o výživě</a>
+                    </div>
+                    <div class="card">
+                        <h3>Osobní trénink</h3>
+                        <p>Individuální lekce ve špičkovém fitku Body Care se zaměřením na SM systém a TRX.</p>
+                        <a href="osobni-trenink.html" class="btn">Chci trénovat</a>
+                    </div>
+                    <div class="card">
+                        <h3>Online spolupráce</h3>
+                        <p>Kompletní vedení na dálku pro ty, kteří chtějí mít výsledky z pohodlí domova.</p>
+                        <a href="online-spoluprace.html" class="btn">Chci online koučink</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="ebook container" id="ebook">
+            <div class="ebook-flex">
+                <div class="ebook-img">
+                    <img src="assets/ebook-doba-zrychlena.png" width="849" height="1126" alt="Obálka ebooku Doba zrychlená: Klíč ke stravě od Ing. Barbory Karáskové" loading="lazy">
+                </div>
+                <div class="ebook-content">
+                    <h2>Ebook: Doba zrychlená – Klíč ke stravě</h2>
+                    <p>Komplexní průvodce stravováním pro uspěchanou dobu – jak nakupovat, vařit a jíst zdravě i s nabitým kalendářem, bez zbytečných výčitek a přísných diet.</p>
+                    <p>Máte k ebooku dotaz, nebo si ho chcete rovnou objednat? Napište mi.</p>
+                    <a href="#kontakt" class="btn">Mám zájem o ebook</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="container contact" id="kontakt">
+            <div class="contact-flex">
+                <div class="contact-info">
+                    <h2>Pojďme se spojit</h2>
+                    <p>Máte dotaz k ebooku nebo chcete začít spolupráci? Napište mi přímo zde nebo na můj email.</p>
+                    <p style="margin-top: 20px;"><strong>Email:</strong> <a href="mailto:karaskovabarbora@seznam.cz">karaskovabarbora@seznam.cz</a></p>
+                    <p><strong>Lokalita:</strong> Praha – Pekárenský dvůr</p>
+                </div>
+                <form class="contact-form" id="contact-form">
+                    <label for="name">Jméno</label>
+                    <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Váš email" required>
+                    <label for="message">Zpráva</label>
+                    <textarea id="message" name="message" rows="5" placeholder="S čím vám mohu pomoci?" required></textarea>
+                    <button type="submit" class="btn btn--block">Odeslat zprávu</button>
+                    <p class="form-note">Odesláním se otevře váš e-mailový klient s předvyplněnou zprávou na karaskovabarbora@seznam.cz.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Barbora Karásková | Všechna práva vyhrazena</p>
+            <p>karaskovabarbora@seznam.cz · Praha – Pekárenský dvůr</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = this.name.value.trim();
+            var email = this.email.value.trim();
+            var message = this.message.value.trim();
+            var subject = encodeURIComponent('Zpráva z webu od ' + name);
+            var body = encodeURIComponent('Jméno: ' + name + '\nEmail: ' + email + '\n\n' + message);
+            window.location.href = 'mailto:karaskovabarbora@seznam.cz?subject=' + subject + '&body=' + body;
+        });
+    </script>
+</body>
+</html>

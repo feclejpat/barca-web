@@ -1,0 +1,76 @@
+NÁVOD — jak upravovat web a jak ho nahrát na Wedos
+====================================================
+
+CO JE CO
+--------
+config.php   → VŠECHNY texty, ceny a odkazy na sociální sítě. Tady budete
+               upravovat obsah. Otevřete v jakémkoli textovém editoru
+               (Poznámkový blok, VS Code, i editor přímo ve správci
+               souborů na Wedosu).
+index.php    → šablona stránky (struktura, HTML). Neupravujte, pokud
+               nechcete měnit rozvržení.
+styles.css   → vzhled (barvy, fonty, rozestupy).
+script.js    → efekty při scrollování, mobilní menu, odesílání formuláře.
+
+
+JAK UPRAVIT TEXT NEBO CENU
+---------------------------
+1. Otevřete config.php.
+2. Najděte řádek, který chcete změnit — každý je popsaný komentářem
+   nad příslušnou sekcí (např. // SEKCE „O MNĚ“).
+3. Změňte text MEZI uvozovkami '...', zbytek řádku (šipku =>, čárku na
+   konci) nechte tak, jak je.
+4. Uložte soubor a v prohlížeči obnovte stránku (F5).
+
+Příklad — změna ceny nutričního koučinku:
+   'cena' => ['hodnota' => '300 Kč', 'popis' => '/ 20 min · diagnostika těla + interpretace výsledků'],
+                          ^^^^^^^^^ tohle změňte na novou cenu
+
+
+JAK NASTAVIT ODKAZY NA SOCIÁLNÍ SÍTĚ
+--------------------------------------
+V config.php najděte sekci 'socialni_site' a vyplňte skutečné odkazy:
+
+   'socialni_site' => [
+       'facebook'  => 'https://www.facebook.com/VAS-SKUTECNY-PROFIL',
+       'instagram' => 'https://www.instagram.com/VAS-SKUTECNY-PROFIL',
+   ],
+
+Teď tam jsou jen dočasné odkazy (…/TODO-vas-profil) — nahraďte je svými.
+Pokud některou síť nechcete zobrazovat vůbec, smažte celý ten řádek
+(i s čárkou na konci).
+
+Ikonky se automaticky objeví na 3 místech: v mobilním menu, v sekci
+Kontakt a v patičce — nikde jinde nic ručně přidávat nemusíte.
+
+
+DŮLEŽITÉ — PROČ TO NEJDE OTEVŘÍT DVOJKLIKEM
+---------------------------------------------
+Tenhle web používá PHP, takže index.php se musí spouštět přes webový
+server s podporou PHP (Wedos to podporuje). Pokud dvakrát kliknete na
+index.php, prohlížeč vám ukáže "holý" PHP kód místo stránky — to je
+v pořádku, prostě to tak funguje, dokud to nenahrajete na hosting.
+
+Chcete-li si web vyzkoušet už teď na svém počítači, potřebujete mít
+nainstalované PHP, a pak ve složce se soubory spustit v terminálu:
+
+    php -S localhost:8000
+
+a v prohlížeči otevřít http://localhost:8000
+
+
+JAK NAHRÁT NA WEDOS
+---------------------
+1. Přihlaste se do administrace hostingu (WedosWEB / FTP přístup).
+2. Nahrajte VŠECHNY čtyři soubory (config.php, index.php, styles.css,
+   script.js) do kořenové složky webu (často "www" nebo "public_html").
+3. Otevřete doménu v prohlížeči — mělo by se rovnou zobrazit index.php
+   jako úvodní stránka (běžné nastavení hostingu).
+
+
+POZNÁMKA K FOTKÁM
+--------------------
+Fotky se na webu nyní berou přímo z Unsplash (odkazy v config.php,
+klíč 'obrazek' / 'obrazky'). Až budete mít vlastní fotky, stačí je
+nahrát na hosting (např. do složky /img) a v config.php nahradit
+příslušný odkaz cestou k souboru, např. 'obrazek' => 'img/hero.jpg'.
