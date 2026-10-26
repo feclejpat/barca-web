@@ -603,7 +603,7 @@ section[data-theme="dark"] .service-price span { color: var(--text-on-dark-muted
 .form-note {
   font-size: 0.78rem;
   color: var(--text-on-dark-muted);
-  margin-top: -8px;
+  margin-top: 12px;
   margin-bottom: 0;
 }
 
