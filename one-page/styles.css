@@ -560,7 +560,12 @@ section[data-theme="dark"] .service-price span { color: var(--text-on-dark-muted
   color: var(--gold-deep);
   margin-bottom: 4px;
 }
-.contact-detail a { text-decoration: none; font-size: 1.1rem; }
+.contact-detail a,
+.contact-detail span {
+  font-size: 1rem;
+  color: var(--text-on-light-muted);
+}
+.contact-detail a { text-decoration: none; }
 .contact-detail a:hover { color: var(--gold-deep); }
 
 .contact-map {
