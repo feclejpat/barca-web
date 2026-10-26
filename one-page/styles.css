@@ -735,6 +735,7 @@ section[data-theme="dark"] .service-price span { color: var(--text-on-dark-muted
   .hero p { font-size: 1rem; }
   .hero-actions { flex-direction: column; }
   .hero-actions .btn { width: 100%; justify-content: center; }
+  .scroll-cue { display: none; }
   .plan-tiers { flex-direction: column; }
   .contact-form { padding: 30px 22px; }
   .about-stats { gap: 28px; }
