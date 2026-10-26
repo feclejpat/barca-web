@@ -1,0 +1,32 @@
+name: Deploy to Wedos
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'one-page/**'
+  workflow_dispatch:
+
+jobs:
+  ftp-deploy:
+    name: Upload one-page to Wedos via FTP
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Wedos
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: www.body-care.cz
+          port: 21
+          username: w6402
+          password: ${{ secrets.WEDOS_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./one-page/
+          server-dir: /www/domains/barborakaraskova.cz/
+          exclude: |
+            **/.DS_Store
+            **/.git*
+            **/.git*/**
