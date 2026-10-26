@@ -197,15 +197,20 @@
                     <a href="https://www.google.com/maps/search/?api=1&query=Bratislavsk%C3%A1+82%2C+602+00+Brno" target="_blank" rel="noopener">Otevřít navigaci</a>
                 </div>
             </div>
-            <form class="contact-form reveal" id="contact-form" style="--delay:0.1s">
+            <form class="contact-form reveal" id="contact-form" action="send-form.php" method="post" style="--delay:0.1s">
                 <label for="name">Jméno</label>
                 <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" placeholder="Váš email" required>
                 <label for="message">Zpráva</label>
                 <textarea id="message" name="message" rows="5" placeholder="S čím vám mohu pomoci?" required></textarea>
+                <div class="form-hp" aria-hidden="true">
+                    <label for="website">Nevyplňujte</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                </div>
                 <button type="submit" class="btn btn--gold btn--block">Odeslat zprávu</button>
-                <p class="form-note">Odesláním se otevře váš e-mailový klient s předvyplněnou zprávou na karaskovabarbora@seznam.cz.</p>
+                <p class="form-note">Vaše údaje použijeme pouze k zodpovězení vašeho dotazu.</p>
+                <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
             </form>
         </div>
     </section>

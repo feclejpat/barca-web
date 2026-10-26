@@ -112,17 +112,51 @@
     });
   }
 
-  /* ---------- Contact form -> mailto ---------- */
+  /* ---------- Contact form -> odeslání e-mailu přes send-form.php ---------- */
   var form = document.getElementById("contact-form");
+  var formStatus = document.getElementById("form-status");
+
+  function setFormStatus(message, state) {
+    if (!formStatus) return;
+    formStatus.textContent = message;
+    formStatus.classList.remove("is-success", "is-error");
+    if (state) formStatus.classList.add(state);
+  }
+
   if (form) {
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      var name = form.name.value.trim();
-      var email = form.email.value.trim();
-      var message = form.message.value.trim();
-      var subject = encodeURIComponent("Zpráva z webu od " + name);
-      var body = encodeURIComponent("Jméno: " + name + "\nEmail: " + email + "\n\n" + message);
-      window.location.href = "mailto:karaskovabarbora@seznam.cz?subject=" + subject + "&body=" + body;
+      var submitBtn = form.querySelector('button[type="submit"]');
+      var originalLabel = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Odesílám…";
+      setFormStatus("", null);
+
+      fetch(form.getAttribute("action"), {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" }
+      })
+        .then(function (res) {
+          return res.json().then(function (data) {
+            return { ok: res.ok, data: data };
+          });
+        })
+        .then(function (result) {
+          if (result.ok && result.data.success) {
+            form.reset();
+            setFormStatus(result.data.message || "Zpráva byla úspěšně odeslána.", "is-success");
+          } else {
+            setFormStatus(result.data.message || "Odeslání se nezdařilo, zkuste to prosím později.", "is-error");
+          }
+        })
+        .catch(function () {
+          setFormStatus("Odeslání se nezdařilo, zkuste to prosím později nebo napište na karaskovabarbora@seznam.cz.", "is-error");
+        })
+        .finally(function () {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalLabel;
+        });
     });
   }
 })();

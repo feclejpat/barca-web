@@ -640,6 +640,23 @@ section[data-theme="dark"] .service-price span { color: var(--text-on-dark-muted
   margin-bottom: 0;
 }
 
+.form-hp {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-status {
+  font-size: 0.85rem;
+  margin-top: 14px;
+  margin-bottom: 0;
+  min-height: 1.2em;
+}
+.form-status.is-success { color: var(--gold-soft); }
+.form-status.is-error { color: #d98a7b; }
+
 /* ----------------------------------- Patička ------------------------------------ */
 .site-footer {
   background: var(--ink);
