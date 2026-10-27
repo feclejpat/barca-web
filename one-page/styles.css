@@ -493,6 +493,7 @@ section[data-theme="dark"] .service-copy p { color: var(--text-on-dark-muted); }
   font-size: 2.1rem;
   font-weight: 300;
   color: var(--gold-deep);
+  white-space: nowrap;
 }
 
 section[data-theme="dark"] .service-price strong { color: var(--gold); }
@@ -520,6 +521,7 @@ section[data-theme="dark"] .service-price span { color: var(--text-on-dark-muted
   font-weight: 300;
   color: var(--gold);
   margin-bottom: 4px;
+  white-space: nowrap;
 }
 
 .plan-tiers .tier span { font-size: 0.85rem; color: var(--text-on-dark-muted); }
